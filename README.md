@@ -1,7 +1,6 @@
-# README
+# The Sun Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+
 
 Things you may want to cover:
 
@@ -15,8 +14,7 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
-
+* How to run the test suit
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
