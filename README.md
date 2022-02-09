@@ -1,24 +1,37 @@
-# README
+# The Sun Blog App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Blog app is a blog website. It's a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts
 
-Things you may want to cover:
+ ## Built With
+ - Ruby
+ - Ruby on Rails
+ - RSpec
 
-* Ruby version
+## Setup
+the link of the repository: https://github.com/alexander16108/Sun-Blog
 
-* System dependencies
+Clone it as `it@github.com:alexander16108/Sun-Blog.git`on a Terminal
 
-* Configuration
+## Usage
+Run bundle install on a Terminal to get Gemfile dependencies.
+Start the server by running rails s
 
-* Database creation
+## Author
+### 👤 Alexander Odufuye
 
-* Database initialization
+GitHub: @alexander16108
+LinkedIn: @codingrex
 
-* How to run the test suite
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
 
-* Services (job queues, cache servers, search engines, etc.)
+Feel free to check the issues page.
 
-* Deployment instructions
+## Show your support
+Give a ⭐️ if you like this project!
 
-* ...
+## Acknowledgments
+
+- Microverse
+- Ruby documentation
+- Stack Overflow
