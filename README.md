@@ -8,12 +8,15 @@
  - RSpec
 
 ## Setup
-Get the link of the repository: https://github.com/chaw-bot/Sun-Blog
-Clone it as git@github.com:alexander16108/Sun-Blog.git on a Terminal
-Usage
+the link of the repository: https://github.com/alexander16108/Sun-Blog
+
+Clone it as `it@github.com:alexander16108/Sun-Blog.git`on a Terminal
+
+## Usage
 Run bundle install on a Terminal to get Gemfile dependencies.
 Start the server by running rails s
-Author
+
+## Author
 ### 👤 Alexander Odufuye
 
 GitHub: @alexander16108
