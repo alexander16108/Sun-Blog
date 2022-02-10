@@ -14,7 +14,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should have correct placeholder' do
       get users_path
-      expect(response.body).to include('This page displays the all users')
+      expect(response.body).to include('This page displays the all post')
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should have correct placeholder' do
-      expect(response.body).to include('This page displays the users details')
+      expect(response.body).to include('This page displays the users post details')
     end
   end
 end
