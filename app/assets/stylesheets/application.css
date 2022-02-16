@@ -13,15 +13,18 @@ a:link {
 .card {
   width: 100%;
 }
+
 .home,
 .user-posts,
 .post-details,
 .user-details {
   padding: 5%;
 }
+
 .a-btn {
   text-align: center;
 }
+
 .header {
   display: flex;
   align-items: center;
