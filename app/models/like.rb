@@ -9,3 +9,4 @@ class Like < ApplicationRecord
     post.likes_counter += 1
   end
 end
+s
