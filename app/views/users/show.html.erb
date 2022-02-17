@@ -1,1 +1,12 @@
-<p>This page displays the users details.</p>
+<div class="user-details">
+  <a href="/">
+    <%= render partial: "partials/card"%>
+  </a>
+  <%= render partial: "partials/bio"%>
+  <%= render partial: "partials/post"%>
+  <a href="show/posts">
+    <div class="a-btn">
+      <button type="button" class="btn btn-secondary mt-3">See all posts</button>
+    </div>
+  </a>
+</div> 

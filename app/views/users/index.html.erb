@@ -1,1 +1,7 @@
-<p>This page displays all users</p>
+<div class="home">
+  <% 7.times do %>
+    <a href="users/show">
+      <%= render partial: "partials/card"%>
+    </a>
+  <% end %>
+</div>
