@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  def new
-    @post = Comment.new
- end
+    def new
+      @post = Comment.new
+   end
 
   def create
     post = Post.find(params[:id])
