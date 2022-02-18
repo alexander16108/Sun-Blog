@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :request do
+RSpec.describe 'Users', type: :request do
   describe 'GET #index' do
     it 'should have a response status code of 200 for success' do
       get users_path
@@ -14,7 +14,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should have correct placeholder' do
       get users_path
-      expect(response.body).to include('This page displays the all post')
+      expect(response.body).to include('SolarBlog')
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should have correct placeholder' do
-      expect(response.body).to include('This page displays the users post details')
+      expect(response.body).to include('SolarBlog')
     end
   end
 end
