@@ -1,6 +1,7 @@
 require 'rails_helper'
+load "#{Rails.root}/db/seeds.rb"
 
-RSpec.describe 'Users', type: :request do
+RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
     it 'should have a response status code of 200 for success' do
       get users_path
@@ -14,7 +15,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'should have correct placeholder' do
       get users_path
-      expect(response.body).to include('This page displays the all users')
+      expect(response.body).to include('SolarBlog')
     end
   end
 
@@ -29,7 +30,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should have correct placeholder' do
-      expect(response.body).to include('This page displays the users details')
+      expect(response.body).to include('SolarBlog')
     end
   end
 end
