@@ -44,7 +44,7 @@ Style/EndOfLine:
   EnforcedStyle: lf
 
 Layout/EndOfLine:
-   Enabled: False
+  Enabled: false
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
