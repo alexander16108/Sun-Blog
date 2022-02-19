@@ -1,77 +1,15 @@
-* {
-  list-style: none;
-}
-
-a {
-  color: black;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-.navbar {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.success,
-.error {
-  border-radius: 5px;
-  color: white;
-  width: 30%;
-}
-
-.success {
-  border: 2px solid green;
-  background: green;
-}
-
-.error {
-  border: 2px solid red;
-  background: red;
-}
-
-.val {
-  display: flex;
-  justify-content: center;
-  text-align-last: center;
-}
-
-.card {
-  width: 100%;
-}
-
-.home,
-.user-posts,
-.post-details,
-.user-details {
-  padding: 5%;
-}
-
-.a-btn {
-  text-align: center;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.post-form {
-  padding: 10% 20%;
-  height: 100vh;
-}
-
-.new-post {
-  height: 100%;
-}
-
-.form {
-  height: 90%;
-}
-
-.text {
-  height: 40vh;
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

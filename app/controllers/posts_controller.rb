@@ -1,40 +1,40 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
+    @user = User.find_by(id: params[:user_id])
+    @posts = Post.all.where(author_id: params[:user_id])
+    @comments = Comment.all.includes(:post_id)
+    @likes = Like.all.includes(:post_id)
   end
 
   def show
-    @post = User.find(params[:user_id]).posts.includes(:comments).find(params[:id])
+    @comments = Comment.all.order(created_at: :desc)
+    @post = Post.find_by(author_id: params[:user_id], id: params[:id])
+    @user = User.find_by(id: params[:user_id])
+    @users = User.all.includes(:name, :id)
+    @likes = Like.all.includes(:post_id)
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new
-    render :new, locals: { post: @post }
+    @post = Post.new
   end
 
   def create
-    @user = User.find(params[:user_id])
-    add_post = @user.posts.new(post_params)
-    add_post.comments_counter = 0
-    add_post.likes_counters = 0
-    respond_to do |format|
-      format.html do
-        if add_post.save
-          flash[:success] = 'Post created successfully'
-          redirect_to user_posts_url
-        else
-          flash.now[:error] = 'Error: Post could not be created'
-          render :new, locals: { post: add_post }
-        end
-      end
-    end
+    @post = Post.new(author_id: params[:user_id], title: params[:title], text: params[:text])
+    redirect_back(fallback_location: root_path)
+    flash.alert = if @post.save
+                    'Post created...'
+                  else
+                    "Post failed, #{@post.errors.full_messages}"
+                  end
   end
+
+  def edit; end
+
+  def update; end
 
   private
 
-  def post_params
-    params.require(:new_post).permit(:title, :text)
+  def user_params
+    params.require(:post).permit(:title, :text)
   end
 end
