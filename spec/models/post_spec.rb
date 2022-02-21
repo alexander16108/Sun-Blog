@@ -1,35 +1,47 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  describe 'post model validations' do
-    subject do
-      Post.new
-    end
+  subject do
+    user = User.new(name: 'Lenny', photo: 'image', bio: 'bio', posts_counter: 0)
+    Post.new(title: 'To Be', text: 'The big question is: "To be or not to be a Ruby programmer"',
+             likes_counters: 0, comments_counter: 0, user: user)
+  end
 
-    before { subject.save }
+  before { subject.save }
 
-    it 'title presence' do
-      subject.title = nil
-      expect(subject).to_not be_valid
-    end
+  it 'should check validation' do
+    expect(subject).to be_valid
+  end
 
-    it 'title should not exceed 250 char' do
-      subject.title = 'post 1' * 251
-      expect(subject).to_not be_valid
-    end
+  it 'should have 250 characters' do
+    subject.title = 'f' * 300
+    expect(subject).to_not be_valid
+  end
 
-    it 'Likes counter should be integer ' do
-      subject.likes_counter = 1.7
-      expect(subject).to_not be_valid
-    end
+  it 'should be invalid if comment counter is nil' do
+    subject.comments_counter = nil
+    expect(subject).to_not be_valid
+  end
 
-    it 'Likes counter should be greater or equal to 0 ' do
-      subject.likes_counter = -1
-      expect(subject).to_not be_valid
-    end
+  it 'should be invalid if like counter is nil' do
+    subject.likes_counters = nil
+    expect(subject).to_not be_valid
+  end
 
-    describe 'post model method' do
-      before { 10.times { |_comment| Comment.create(post_id: subject.id) } }
-    end
+  it 'should return most recent comments' do
+    user = User.new(name: 'Lenny', photo: 'image', bio: 'bio', posts_counter: 0)
+    comment2 = subject.comments.create!(user: user, text: 'I would not have said it better')
+    comment3 = subject.comments.create!(user: user, text: 'Well I desagree...')
+    comment4 = subject.comments.create!(user: user, text: 'Thats not true..')
+    comment5 = subject.comments.create!(user: user, text: 'Hmmmm well...')
+    comment6 = subject.comments.create!(user: user, text: 'Thats not what he said')
+
+    comments = subject.return_most_recent_comments
+    expect(comments.length).to eql 5
+    expect(comments).to match_array([comment6, comment5, comment4, comment3, comment2])
+  end
+
+  it 'should update user post  counter' do
+    expect(subject.user.posts_counter).to eql 1
   end
 end
