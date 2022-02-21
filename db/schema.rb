@@ -49,11 +49,7 @@ ActiveRecord::Schema.define(version: 2022_01_26_082429) do
     t.string "name"
     t.string "photo"
     t.text "bio"
-<<<<<<< Updated upstream
-    t.integer "posts_counter"
-=======
     t.integer "posts_counter", default: 0, null: false
->>>>>>> Stashed changes
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
